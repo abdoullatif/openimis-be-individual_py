@@ -57,7 +57,9 @@ class IndividualCustomFilterWizard(CustomFilterWizardInterface):
             tuple_with_definition = tuple_type(
                 field=key,
                 filter=self.FILTERS_BASED_ON_FIELD_TYPE[value['type']],
-                type=value['type']
+                type=value['type'],
+                referential=value['referential'] if 'referential' in value else None,
+                typeLocation=value['typeLocation'] if 'typeLocation' in value else None
             )
             tuples_with_definitions.append(tuple_with_definition)
 
